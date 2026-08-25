@@ -33,7 +33,7 @@ export const Footer: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-6 text-xs text-slate-400 font-medium">
             <a href="#como-funciona" className="hover:text-emerald-400 transition-colors">Como Funciona</a>
             <a href="#metodologia" className="hover:text-emerald-400 transition-colors">Os 5 Encontros</a>
-            <a href="#especialista" className="hover:text-emerald-400 transition-colors">Quem Ensina</a>
+            <a href="#sobre-mim" className="hover:text-emerald-400 transition-colors">Sobre Mim</a>
             <a href="#bonus" className="hover:text-emerald-400 transition-colors">Bônus</a>
             <a href="#investimento" className="hover:text-emerald-400 transition-colors">Investimento</a>
             <a href="#duvidas" className="hover:text-emerald-400 transition-colors">Dúvidas</a>

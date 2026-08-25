@@ -11,26 +11,22 @@ export const Hero: React.FC = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200/80 shadow-xs">
-            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            12 anos de experiência no Sicredi
-          </span>
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
-            <UserCheck className="w-3.5 h-3.5 text-emerald-600" />
-            Acompanhamento 100% Individual 1:1
-          </span>
-          <span className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-700 border border-slate-200">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            5 Encontros + 3 Bônus
-          </span>
-        </div>
-
         {/* Main Headline */}
         <div className="text-center max-w-4xl mx-auto mb-8">
+          {/* Project Logo without background */}
+          <div className="flex items-center justify-center mb-6 sm:mb-8">
+            <img
+              src={SITE_DATA.logoUrl}
+              alt="Aprova Coop"
+              className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-transform duration-200 hover:scale-105"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
+          </div>
+
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
-            Conquiste sua oportunidade em uma{" "}
+            Conquiste sua vaga em uma{" "}
             <span className="text-emerald-600">
               Cooperativa de Crédito.
             </span>
@@ -105,20 +101,82 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Cooperatives Target Banner */}
+        {/* Cooperatives Target Banner with Animated Logo Carousel */}
         <div className="mt-16 pt-8 border-t border-slate-200 text-center">
-          <p className="text-[11px] uppercase tracking-widest text-slate-500 font-bold mb-4">
+          <p className="text-[11px] uppercase tracking-widest text-slate-500 font-bold mb-6">
             Metodologia baseada em experiências reais no sistema de cooperativas:
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {SITE_DATA.cooperativeInstitutions.map((coop, index) => (
-              <span
-                key={index}
-                className="px-3.5 py-1.5 rounded-lg bg-white border border-slate-200 text-slate-700 text-xs font-semibold shadow-2xs hover:border-emerald-400 transition-colors"
-              >
-                {coop}
-              </span>
-            ))}
+
+          {/* Marquee Carousel with transparent gradient fade edges */}
+          <div className="relative w-full overflow-hidden py-2">
+            {/* Left transparent gradient edge */}
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-slate-50 to-transparent z-10" />
+            
+            {/* Right transparent gradient edge */}
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-50 to-transparent z-10" />
+
+            {/* Continuous Marquee Track */}
+            <div className="animate-marquee flex items-center gap-8 sm:gap-14">
+              {/* Group 1 */}
+              {SITE_DATA.cooperativeLogos.map((item, index) => (
+                <div
+                  key={`logo-1-${index}`}
+                  className="flex items-center justify-center shrink-0 px-2 sm:px-4"
+                >
+                  <img
+                    src={item.url}
+                    alt={item.name}
+                    referrerPolicy="no-referrer"
+                    className="h-8 sm:h-10 max-w-[140px] sm:max-w-[170px] w-auto object-contain transition-transform hover:scale-105"
+                  />
+                </div>
+              ))}
+
+              {/* Group 2 (Duplicate for seamless infinite loop) */}
+              {SITE_DATA.cooperativeLogos.map((item, index) => (
+                <div
+                  key={`logo-2-${index}`}
+                  className="flex items-center justify-center shrink-0 px-2 sm:px-4"
+                >
+                  <img
+                    src={item.url}
+                    alt={item.name}
+                    referrerPolicy="no-referrer"
+                    className="h-8 sm:h-10 max-w-[140px] sm:max-w-[170px] w-auto object-contain transition-transform hover:scale-105"
+                  />
+                </div>
+              ))}
+
+              {/* Group 3 (Duplicate for seamless infinite loop) */}
+              {SITE_DATA.cooperativeLogos.map((item, index) => (
+                <div
+                  key={`logo-3-${index}`}
+                  className="flex items-center justify-center shrink-0 px-2 sm:px-4"
+                >
+                  <img
+                    src={item.url}
+                    alt={item.name}
+                    referrerPolicy="no-referrer"
+                    className="h-8 sm:h-10 max-w-[140px] sm:max-w-[170px] w-auto object-contain transition-transform hover:scale-105"
+                  />
+                </div>
+              ))}
+
+              {/* Group 4 (Duplicate for ultra smooth continuous loop on widescreen) */}
+              {SITE_DATA.cooperativeLogos.map((item, index) => (
+                <div
+                  key={`logo-4-${index}`}
+                  className="flex items-center justify-center shrink-0 px-2 sm:px-4"
+                >
+                  <img
+                    src={item.url}
+                    alt={item.name}
+                    referrerPolicy="no-referrer"
+                    className="h-8 sm:h-10 max-w-[140px] sm:max-w-[170px] w-auto object-contain transition-transform hover:scale-105"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

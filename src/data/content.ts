@@ -33,10 +33,60 @@ export const SITE_DATA = {
   specialPrice: "R$ 599,00",
   installments: "em até 12x no cartão",
   mentor: {
+    name: "Especialista em Carreiras no Cooperativismo",
+    role: "Fundador do Aprova Coop | Ex-Gestor no Sistema Financeiro",
     totalExperience: "Mais de 15 anos",
     systemExperience: "no sistema bancário",
     coopExperience: "12 anos no Sicredi",
     bio: "Minha trajetória profissional foi construída ao longo de mais de 15 anos no sistema bancário, sendo 12 anos dentro do Sicredi. Foi onde construí uma trajetória sólida, conhecendo na prática o ambiente de uma cooperativa de crédito, sua cultura e as competências necessárias para crescer nesse mercado.",
+    photoPlaceholder: "https://firebasestorage.googleapis.com/v0/b/travessia-c189d.firebasestorage.app/o/site_images%2F1785428383876_WhatsApp_Image_2026-07-30_at_13.08.17.jpeg?alt=media&token=66176ba4-cb4f-48e4-9371-f83628a49721",
+    photoUrl: "https://firebasestorage.googleapis.com/v0/b/travessia-c189d.firebasestorage.app/o/site_images%2F1785428383876_WhatsApp_Image_2026-07-30_at_13.08.17.jpeg?alt=media&token=66176ba4-cb4f-48e4-9371-f83628a49721",
+    story: {
+      headline: "De 12 anos dentro do Sicredi à criação de um método que transforma carreiras",
+      paragraphs: [
+        "Minha história com o sistema financeiro começou há mais de 15 anos. Ao longo dessa jornada, dediquei 12 anos ao Sicredi, uma das maiores e mais respeitadas instituições financeiras cooperativas do Brasil.",
+        "Durante mais de uma década atuando no coração do cooperativismo, vivi na pele o que realmente move essas instituições: a relação de confiança com o cooperado, o compromisso com o desenvolvimento comunitário e a busca incessante por profissionais que não sejam apenas executores de metas, mas embaixadores dos princípios cooperativistas.",
+        "Participei de bancas, processos de expansão, reuniões de resultados e contratações. Vi de perto tanto o brilho nos olhos de quem ingressava e prosperava quanto a dor de excelentes profissionais que eram reprovados simplesmente por não saberem traduzir seu valor na linguagem que o cooperativismo exige.",
+        "Minha saída do sistema aconteceu pela porta da frente, por uma decisão consciente: empreender e construir uma nova trajetória empresarial. Com essa decisão, decidi sistematizar toda essa vivência de 15 anos de mercado e 12 anos de cooperativa em um braço educacional prático e transparente.",
+        "Assim nasceu o Aprova Coop: um programa de preparação individual 1:1, feito sob medida para quem deseja ingressar ou crescer no sistema cooperativo de crédito com posicionamento estratégico, autoconfiança e conhecimento profundo de quem já esteve do outro lado da mesa."
+      ],
+      milestones: [
+        {
+          period: "15+ Anos",
+          title: "Mercado Bancário & Financeiro",
+          desc: "Ampla vivência em produtos financeiros, crédito, relacionamento, metas e expansão de negócios."
+        },
+        {
+          period: "12 Anos",
+          title: "Trajetória no Sicredi",
+          desc: "Atuação direta na cultura cooperativista, conhecendo detalhadamente os perfis e posturas valorizados."
+        },
+        {
+          period: "Transição",
+          title: "Saída pela Porta da Frente",
+          desc: "Decisão estratégica de empreender, transformando vivência prática em desenvolvimento profissional."
+        },
+        {
+          period: "Hoje",
+          title: "Aprova Coop",
+          desc: "Preparação 1:1 com simulações reais, currículo estratégico e foco total em resultados tangíveis."
+        }
+      ],
+      principles: [
+        {
+          title: "Transparência Absoluta",
+          desc: "Sem falsas promessas de aprovação automática. A decisão é sempre da banca; nosso papel é deixá-lo no mais alto nível de prontidão."
+        },
+        {
+          title: "Valorização da Sua História",
+          desc: "Não inventamos experiências. Ensinamos você a demonstrar com orgulho e clareza as competências que já conquistou."
+        },
+        {
+          title: "Vivência Real, Não Teórica",
+          desc: "Todo o conteúdo é respaldado por 12 anos de prática diária dentro do cooperativismo de crédito."
+        }
+      ]
+    }
   },
   meetings: [
     {
@@ -265,6 +315,25 @@ export const SITE_DATA = {
     "Credisis",
     "Credicitrus",
     "Cresol Confederação"
+  ],
+
+  cooperativeLogos: [
+    {
+      name: "Sicredi",
+      url: "https://firebasestorage.googleapis.com/v0/b/travessia-c189d.firebasestorage.app/o/site_images%2F1787660411840_sicredi?alt=media&token=2691b6c5-ce23-4663-98e4-0c85647491db"
+    },
+    {
+      name: "Sicoob",
+      url: "https://firebasestorage.googleapis.com/v0/b/travessia-c189d.firebasestorage.app/o/site_images%2F1787660401459_sicoob?alt=media&token=456c3c06-1c86-4931-8f2d-ce2da032f751"
+    },
+    {
+      name: "Cresol",
+      url: "https://firebasestorage.googleapis.com/v0/b/travessia-c189d.firebasestorage.app/o/site_images%2F1787660392611_cresol?alt=media&token=69521a6d-c0b1-4747-85a5-6e0ba928dd0d"
+    },
+    {
+      name: "Unicred",
+      url: "https://firebasestorage.googleapis.com/v0/b/travessia-c189d.firebasestorage.app/o/site_images%2F1787660418682_unicred?alt=media&token=58f862b3-647f-4955-b775-dbd88c4a7eb7"
+    }
   ],
 
   faqs: [

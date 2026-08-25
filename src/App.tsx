@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { PainPoints } from "./components/PainPoints";
 import { BeyondResume } from "./components/BeyondResume";
 import { Authority } from "./components/Authority";
 import { Methodology } from "./components/Methodology";
+import { AboutMe } from "./components/AboutMe";
 import { Bonuses } from "./components/Bonuses";
 import { DeliverablesStack } from "./components/DeliverablesStack";
 import { Pricing } from "./components/Pricing";
@@ -39,16 +39,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 flex flex-col selection:bg-emerald-500 selection:text-white">
-      {/* Top Navigation */}
-      <Navbar />
-
       {/* Main Content Sections */}
       <main className="flex-grow">
         <Hero />
         <PainPoints />
         <BeyondResume />
-        <Authority />
         <Methodology />
+        <AboutMe />
         <Bonuses />
         <DeliverablesStack />
         <Pricing />
