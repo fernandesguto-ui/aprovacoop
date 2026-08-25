@@ -1,0 +1,6 @@
+{
+  "name": "Aprova Coop",
+  "description": "Prepare-se para conquistar sua oportunidade em uma cooperativa de crédito com acompanhamento individual 1:1.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
