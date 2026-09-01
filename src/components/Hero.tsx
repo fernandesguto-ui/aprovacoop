@@ -1,217 +1,344 @@
 import React from "react";
 import { SITE_DATA } from "../data/content";
 import {
-  ArrowRight,
-  Check,
-  CheckCircle2,
+  Briefcase,
   FileText,
   Linkedin,
   Video,
   Cpu,
-  Shield,
-  Sparkles,
-  TrendingUp,
-  UserCheck,
+  Trophy,
+  Check,
 } from "lucide-react";
+import { motion } from "motion/react";
 
 export const Hero: React.FC = () => {
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 lg:pt-12 lg:pb-20 bg-white border-b border-slate-200">
-      {/* Subtle light background accent */}
-      <div className="absolute top-0 right-0 w-[550px] h-[550px] bg-emerald-50/50 rounded-full blur-3xl pointer-events-none -z-0" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-slate-50 rounded-full blur-3xl pointer-events-none -z-0" />
+    <section className="relative overflow-hidden pt-10 pb-20 sm:pt-14 sm:pb-28 lg:pt-16 lg:pb-32 bg-white">
+      {/* Subtle modern ambient background blur */}
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-emerald-50/60 rounded-full blur-3xl pointer-events-none -z-0" />
+      <div className="absolute bottom-10 left-10 w-[500px] h-[500px] bg-slate-50/80 rounded-full blur-3xl pointer-events-none -z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* 2-Column Grid on Desktop */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column (Hero Content) */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Project Logo at the Top */}
-            <div className="w-full flex justify-center sm:justify-start mb-6">
+            <div className="w-full flex justify-center sm:justify-start mb-8">
               <img
                 src={SITE_DATA.logoUrl}
                 alt="Aprova Coop"
-                className="h-16 sm:h-12 w-auto object-contain"
+                className="h-16 sm:h-20 lg:h-24 w-auto max-w-[320px] sm:max-w-[420px] object-contain"
                 onError={(e) => {
                   (e.target as HTMLElement).style.display = "none";
                 }}
               />
             </div>
 
-            {/* Top Amber Badge */}
-            <div className="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-200 mb-6 shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-              <span>Preparação individual para transformar experiência em contratação.</span>
-            </div>
-
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[54px] font-extrabold text-slate-900 tracking-tight leading-[1.12] mb-6">
+            <h1 className="w-full text-center sm:text-left text-3xl sm:text-5xl lg:text-[56px] font-extrabold text-slate-900 tracking-tight leading-[1.12] mb-8">
               Conquiste sua vaga <br className="hidden sm:block" />
               em uma{" "}
               <span className="text-emerald-600">
                 Cooperativa <br className="hidden sm:block" />
-                de Crédito.
+                de Crédito
               </span>
             </h1>
 
             {/* Subtitle Paragraphs */}
-            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-3 max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-4 max-w-2xl">
               Você não precisa continuar enviando currículos sem saber por que não está avançando nos processos seletivos.
             </p>
 
-            <p className="text-sm sm:text-base text-slate-500 leading-relaxed mb-8 max-w-2xl">
+            <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed mb-10 max-w-2xl">
               Existe uma diferença enorme entre querer trabalhar em uma cooperativa e{" "}
               <strong className="text-emerald-700 font-semibold">saber se posicionar</strong> como o profissional que faz sentido para aquela instituição.
             </p>
 
             {/* 4 Feature Cards Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 w-full mb-8">
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex flex-col items-center text-center justify-center gap-2 hover:border-emerald-300 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                  <FileText className="w-4 h-4" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full">
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 hover:bg-emerald-50/40 transition-all duration-300 flex flex-col items-center text-center justify-center gap-3 group hover:-translate-y-0.5">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-xs text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FileText className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-slate-800 leading-snug">
-                  Currículo ao vivo
+                  Currículo magnético 
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex flex-col items-center text-center justify-center gap-2 hover:border-emerald-300 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                  <Linkedin className="w-4 h-4" />
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 hover:bg-emerald-50/40 transition-all duration-300 flex flex-col items-center text-center justify-center gap-3 group hover:-translate-y-0.5">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-xs text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Linkedin className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-slate-800 leading-snug">
                   LinkedIn otimizado
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex flex-col items-center text-center justify-center gap-2 hover:border-emerald-300 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                  <Video className="w-4 h-4" />
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 hover:bg-emerald-50/40 transition-all duration-300 flex flex-col items-center text-center justify-center gap-3 group hover:-translate-y-0.5">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-xs text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Video className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-slate-800 leading-snug">
                   Simulação real 1:1
                 </span>
               </div>
 
-              <div className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex flex-col items-center text-center justify-center gap-2 hover:border-emerald-300 transition-colors">
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                  <Cpu className="w-4 h-4" />
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/80 hover:bg-emerald-50/40 transition-all duration-300 flex flex-col items-center text-center justify-center gap-3 group hover:-translate-y-0.5">
+                <div className="w-10 h-10 rounded-xl bg-white shadow-xs text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Cpu className="w-5 h-5" />
                 </div>
                 <span className="text-xs font-bold text-slate-800 leading-snug">
-                  Gupy & ATS sem mistério
+                  Gupy e ATS
                 </span>
               </div>
             </div>
 
           </div>
 
-          {/* Right Column (Layered Mockup / Graphic Cards) */}
-          <div className="lg:col-span-5 relative w-full flex items-center justify-center pt-6 lg:pt-0">
-            <div className="relative w-full max-w-[440px] aspect-[4/5] sm:aspect-square lg:aspect-[4/5] flex items-center justify-center">
-              {/* Card 1: Dark Profile Card (Top Right) */}
-              <div className="absolute top-2 sm:top-4 right-0 sm:right-2 w-64 sm:w-72 bg-slate-900 text-white rounded-2xl p-4 sm:p-5 shadow-2xl border border-slate-800 z-10 transform hover:scale-[1.02] transition-transform">
-                <div className="flex items-center justify-between mb-3.5">
-                  <span className="text-xs font-semibold text-slate-300">Seu perfil profissional</span>
-                  <div className="w-6 h-6 rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center shadow-xs">
-                    <Check className="w-3.5 h-3.5 stroke-[3]" />
-                  </div>
+          {/* Right Column (Dynamic Animated Floating Cards Mockup) */}
+          <div className="lg:col-span-5 relative w-full flex items-center justify-center pt-8 lg:pt-0">
+            <div className="relative w-full max-w-[430px] sm:max-w-[460px] min-h-[460px] sm:min-h-[500px] flex items-center justify-center">
+              
+              {/* 1. Top Left Badge (+ de 1500 vagas) */}
+              <motion.div
+                animate={{
+                  y: [0, -8, 0],
+                  rotate: [0, -1, 0],
+                }}
+                transition={{
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-0 -left-2 sm:left-0 z-30 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-2xl bg-emerald-50/95 border border-emerald-200/80 shadow-md backdrop-blur-xs"
+              >
+                <div className="w-6 h-6 rounded-lg bg-emerald-100 flex items-center justify-center text-emerald-700">
+                  <Briefcase className="w-3.5 h-3.5" />
                 </div>
+                <span className="text-xs sm:text-sm font-extrabold text-emerald-950 tracking-tight">
+                  + de 1500 vagas
+                </span>
+              </motion.div>
 
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-300">
-                    <UserCheck className="w-5 h-5 text-emerald-400" />
-                  </div>
-                  <div className="flex-1 space-y-1.5">
-                    <div className="h-3 bg-slate-700 rounded-full w-24" />
-                    <div className="h-2 bg-slate-800 rounded-full w-36" />
-                  </div>
-                </div>
+              {/* 2. Main Dark Card (Document / Curriculum ATS Preview) */}
+              <motion.div
+                animate={{
+                  y: [0, 4, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative w-[300px] sm:w-[340px] rounded-[32px] bg-[#0f172a] border border-slate-700/80 shadow-2xl p-5 sm:p-6 flex flex-col justify-between overflow-hidden text-left"
+              >
+                {/* Subtle dark glow */}
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
-                <div className="space-y-2 pt-2 border-t border-slate-800/80">
-                  <div className="h-2 bg-emerald-500/30 rounded-full w-full" />
-                  <div className="h-2 bg-slate-800 rounded-full w-4/5" />
-                  <div className="h-2 bg-slate-800 rounded-full w-3/5" />
-                </div>
-              </div>
-
-              {/* Card 2: "Vaga dos Sonhos" Badge Card (Floating Left Overlap) */}
-              <div className="absolute top-28 sm:top-32 -left-2 sm:-left-4 bg-white border border-slate-200/90 rounded-2xl p-4 shadow-xl z-20 w-56 sm:w-60 transform hover:scale-105 transition-transform">
-                <div className="flex items-center justify-between gap-2">
-                  <div>
-                    <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-extrabold uppercase tracking-wide mb-1.5">
-                      <Sparkles className="w-2.5 h-2.5 text-emerald-600" />
-                      Vaga dos sonhos
+                {/* Top Section with Profile Photo + Name + Verified Check */}
+                <div>
+                  <div className="flex items-start justify-between gap-3 mb-4">
+                    {/* Profile Picture */}
+                    <div className="relative shrink-0">
+                      <img
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format&fit=crop&q=80"
+                        alt="Foto de Perfil do Candidato"
+                        referrerPolicy="no-referrer"
+                        className="w-12 h-12 rounded-full object-cover border-2 border-emerald-400 shadow-md"
+                      />
+                      <div className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-emerald-500 rounded-full border-2 border-[#0f172a]" />
                     </div>
-                    <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight">
-                      Analista de Negócios
-                    </h4>
-                    <p className="text-[11px] text-slate-500 font-medium">
-                      Cooperativa de Crédito
-                    </p>
-                  </div>
-                  <div className="w-7 h-7 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-md">
-                    <Check className="w-4 h-4 stroke-[3]" />
-                  </div>
-                </div>
-              </div>
 
-              {/* Card 3: Checklist "Etapas do Processo" (Middle Right) */}
-              <div className="absolute top-52 sm:top-56 right-2 sm:right-4 bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xl z-10 w-60 sm:w-68 transform hover:scale-[1.02] transition-transform">
-                <h4 className="text-xs sm:text-sm font-extrabold text-slate-900 mb-3 flex items-center gap-1.5">
-                  <span>Etapas do processo</span>
-                </h4>
-                <div className="space-y-2.5 text-xs text-slate-700">
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-[11px] sm:text-xs">Triagem de currículo</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-[11px] sm:text-xs">Testes e avaliações</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-[11px] sm:text-xs">Entrevista técnica</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="font-medium text-[11px] sm:text-xs">Entrevista final</span>
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  </div>
-                </div>
-              </div>
+                    {/* Candidate Info */}
+                    <div className="flex-1 min-w-0 pr-1">
+                      <h4 className="text-xs sm:text-sm font-black text-white truncate tracking-tight">
+                        Mariana Silveira
+                      </h4>
+                      <p className="text-[10px] sm:text-[11px] font-semibold text-emerald-400 truncate">
+                        Assistente de Negócios
+                      </p>
+                      <p className="text-[9px] text-slate-400 flex items-center gap-1 mt-0.5">
+                       <span>Superior Completo</span>
+                      </p>
+                    </div>
 
-              {/* Card 4: Chart Card "Preparação Personalizada" (Bottom Left) */}
-              <div className="absolute bottom-2 sm:bottom-4 left-0 sm:left-2 bg-white border border-slate-200/90 rounded-2xl p-3.5 sm:p-4 shadow-xl z-20 w-52 sm:w-56 transform hover:scale-105 transition-transform">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-[11px] font-bold text-slate-800">Preparação personalizada</span>
-                  <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
+                    {/* Green Checkmark Badge */}
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#00c868] text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 shrink-0">
+                      <Check className="w-4 h-4 sm:w-5 sm:h-5 stroke-[3]" />
+                    </div>
+                  </div>
+
+                  {/* Fictitious Mini Resume Sections */}
+                  <div className="space-y-3 pt-2 text-[10px] sm:text-[11px]">
+                    {/* Experiência */}
+                    <div className="p-2.5 rounded-xl bg-slate-800/80 border border-slate-700/60 space-y-1">
+                      <div className="flex justify-between items-center text-slate-300 font-bold text-[10px]">
+                        <span className="text-white">Atendimento e Produtos Financeiros</span>
+                        <span className="text-emerald-400 font-semibold text-[9px]">3 anos exp.</span>
+                      </div>
+                      <p className="text-slate-400 text-[9px] leading-tight">
+                        Abertura de contas, consórcios, crédito e relacionamento com cooperados.
+                      </p>
+                    </div>
+
+                    {/* Tags / Keywords ATS */}
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      <span className="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 text-[9px] font-bold border border-emerald-500/30">
+                        Cooperativismo
+                      </span>
+                      <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[9px] font-semibold border border-slate-700">
+                        Gestão de Carteira
+                      </span>
+                      <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 text-[9px] font-semibold border border-slate-700">
+                        Gupy 98% Match
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                {/* Visual SVG Progress Curve */}
-                <div className="w-full h-12 relative overflow-hidden flex items-end">
-                  <svg className="w-full h-full" viewBox="0 0 100 40" fill="none" preserveAspectRatio="none">
-                    <path
-                      d="M0 35 Q 20 32, 40 22 T 80 12 T 100 4"
-                      stroke="#059669"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M0 35 Q 20 32, 40 22 T 80 12 T 100 4 L 100 40 L 0 40 Z"
-                      fill="url(#emeraldGradient)"
-                      opacity="0.15"
-                    />
+
+                {/* Bottom Match Indicator */}
+                <div className="space-y-2 pt-4 mt-3 border-t border-slate-800/90">
+                  <div className="flex items-center justify-between text-[10px]">
+                    <span className="text-slate-400 font-medium">Compatibilidade da Vaga:</span>
+                    <span className="text-emerald-400 font-black">98%</span>
+                  </div>
+                  <div className="w-full h-1.5 rounded-full bg-slate-800 overflow-hidden">
+                    <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 w-[98%]" />
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 3. Overlapping Card: CURRÍCULO VENCEDOR (Floating Top-Left/Center) */}
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                  x: [0, 3, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute top-16 -left-3 sm:-left-6 z-20 rounded-2xl bg-white shadow-xl shadow-slate-900/10 border border-slate-100/90 p-3.5 sm:p-4 flex items-center gap-3.5 backdrop-blur-xs min-w-[250px] sm:min-w-[280px]"
+              >
+                {/* Trophy Icon circle */}
+                <div className="w-11 h-11 rounded-xl bg-emerald-50 border border-emerald-100/80 flex items-center justify-center text-emerald-600 shrink-0">
+                  <Trophy className="w-6 h-6 text-emerald-600" />
+                </div>
+
+                {/* Text */}
+                <div className="flex-1 pr-1">
+                  <h4 className="text-xs sm:text-sm font-black text-slate-900 tracking-tight uppercase leading-none mb-1">
+                    Currículo Vencedor
+                  </h4>
+                  <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">
+                    Preparado para ser encontrado
+                  </p>
+                </div>
+
+                {/* Right Green Check */}
+                <div className="w-6 h-6 rounded-full bg-[#00c868] text-white flex items-center justify-center shrink-0 shadow-sm">
+                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                </div>
+              </motion.div>
+
+              {/* 4. Overlapping Card: Perfil Otimizado (Gupy + LinkedIn) (Floating Mid-Right) */}
+              <motion.div
+                animate={{
+                  y: [0, 8, 0],
+                  x: [0, -4, 0],
+                }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+                className="absolute top-48 -right-2 sm:-right-6 z-20 rounded-2xl bg-white shadow-xl shadow-slate-900/10 border border-slate-100/90 p-3.5 sm:p-4 backdrop-blur-xs min-w-[210px] sm:min-w-[230px]"
+              >
+                <p className="text-[11px] font-bold text-slate-800 mb-2">
+                  Perfil otimizado
+                </p>
+                <div className="flex items-center gap-3 pt-0.5">
+                  {/* Gupy custom text styling */}
+                  <span className="text-xl sm:text-2xl font-black text-[#4f21cf] tracking-tighter lowercase select-none">
+                    gupy
+                  </span>
+
+                  <div className="w-px h-6 bg-slate-200" />
+
+                  {/* LinkedIn Icon badge */}
+                  <div className="flex items-center gap-0.5">
+                    <div className="w-7 h-7 rounded-md bg-[#0A66C2] text-white flex items-center justify-center font-bold text-sm tracking-tighter shadow-xs">
+                      in
+                    </div>
+                    <span className="text-[8px] text-slate-400 font-bold -mt-3">®</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 5. Overlapping Card: Mais chances de entrevista (Growth Chart) (Floating Bottom-Left) */}
+              <motion.div
+                animate={{
+                  y: [0, -7, 0],
+                  x: [0, 3, 0],
+                }}
+                transition={{
+                  duration: 4.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
+                className="absolute bottom-4 -left-2 sm:-left-4 z-20 rounded-2xl bg-white shadow-xl shadow-slate-900/10 border border-slate-100/90 p-3.5 sm:p-4 backdrop-blur-xs w-[180px] sm:w-[210px]"
+              >
+                <p className="text-[10px] sm:text-[11px] font-bold text-slate-800 mb-2">
+                  Mais chances de entrevista
+                </p>
+                
+                {/* Smooth ascending curve with arrow */}
+                <div className="relative w-full h-10 sm:h-12 overflow-visible">
+                  <svg
+                    viewBox="0 0 160 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-full h-full"
+                  >
                     <defs>
-                      <linearGradient id="emeraldGradient" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#059669" />
-                        <stop offset="100%" stopColor="#ffffff" />
+                      <linearGradient id="curveGradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#10b981" stopOpacity="0.25" />
+                        <stop offset="100%" stopColor="#10b981" stopOpacity="0.0" />
                       </linearGradient>
                     </defs>
+
+                    {/* Area under curve */}
+                    <path
+                      d="M 5 45 Q 60 42 100 25 T 150 10 L 150 50 L 5 50 Z"
+                      fill="url(#curveGradient)"
+                    />
+
+                    {/* Rising Stroke */}
+                    <path
+                      d="M 5 45 Q 60 42 100 25 T 150 10"
+                      stroke="#00c868"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                    />
+
+                    {/* Arrow Head */}
+                    <path
+                      d="M 142 8 L 152 9 L 149 19"
+                      stroke="#00c868"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </div>
-              </div>
+              </motion.div>
 
             </div>
           </div>
@@ -222,3 +349,5 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
+
+
