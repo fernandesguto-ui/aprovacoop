@@ -10,56 +10,44 @@ import { Footer } from "./components/Footer";
 import { SimuladosPage } from "./components/SimuladosPage";
 import { MetodoDca } from "./components/MetodoDca";
 
+function getRoute(): string {
+  if (typeof window === "undefined") return "/";
+  const path = (window.location.pathname || "").toLowerCase();
+  const hash = (window.location.hash || "").toLowerCase();
+  const search = (window.location.search || "").toLowerCase();
+  const full = `${path} ${hash} ${search}`;
+
+  if (full.includes("simulado")) {
+    return "/simulados";
+  }
+  if (
+    full.includes("metododca") ||
+    full.includes("metodo-dca") ||
+    full.includes("metodo_dca") ||
+    full.includes("dca")
+  ) {
+    return "/metododca";
+  }
+  return "/";
+}
+
 export default function App() {
-  const [currentPath, setCurrentPath] = useState<string>(() => {
-    if (typeof window !== "undefined") {
-      const path = window.location.pathname.toLowerCase();
-      const hash = window.location.hash.toLowerCase();
-      const search = window.location.search.toLowerCase();
-      if (path.includes("simulado") || hash.includes("simulado") || search.includes("simulado")) {
-        return "/simulados";
-      }
-      if (
-        path.includes("metododca") ||
-        hash.includes("metododca") ||
-        search.includes("metododca") ||
-        path.includes("metodo-dca") ||
-        hash.includes("metodo-dca") ||
-        search.includes("metodo-dca")
-      ) {
-        return "/metododca";
-      }
-      return path || "/";
-    }
-    return "/";
-  });
+  const [currentPath, setCurrentPath] = useState<string>(getRoute);
 
   useEffect(() => {
     const handleLocationChange = () => {
-      const path = window.location.pathname.toLowerCase();
-      const hash = window.location.hash.toLowerCase();
-      const search = window.location.search.toLowerCase();
-      if (path.includes("simulado") || hash.includes("simulado") || search.includes("simulado")) {
-        setCurrentPath("/simulados");
-      } else if (
-        path.includes("metododca") ||
-        hash.includes("metododca") ||
-        search.includes("metododca") ||
-        path.includes("metodo-dca") ||
-        hash.includes("metodo-dca") ||
-        search.includes("metodo-dca")
-      ) {
-        setCurrentPath("/metododca");
-      } else {
-        setCurrentPath("/");
-      }
+      setCurrentPath(getRoute());
     };
 
     window.addEventListener("popstate", handleLocationChange);
     window.addEventListener("hashchange", handleLocationChange);
+
+    const interval = setInterval(handleLocationChange, 250);
+
     return () => {
       window.removeEventListener("popstate", handleLocationChange);
       window.removeEventListener("hashchange", handleLocationChange);
+      clearInterval(interval);
     };
   }, []);
 
