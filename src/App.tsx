@@ -15,7 +15,8 @@ function getRoute(): string {
   const path = (window.location.pathname || "").toLowerCase();
   const hash = (window.location.hash || "").toLowerCase();
   const search = (window.location.search || "").toLowerCase();
-  const full = `${path} ${hash} ${search}`;
+  const href = (window.location.href || "").toLowerCase();
+  const full = `${path} ${hash} ${search} ${href}`;
 
   if (full.includes("simulado")) {
     return "/simulados";
